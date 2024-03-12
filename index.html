@@ -15,7 +15,7 @@
                 <img src="img/icon-menu.svg" alt="menu" class="menu">
                 <img src="img/logo.svg" alt="logo" class="logo">
             </div>
-            <div class="navbar">
+            <nav class="navbar">
                 <ul class="navlist">
                     <li><a href="#" target="_self">Collections</a></li>
                     <li><a href="#" target="_self">Men</a></li>
@@ -23,15 +23,18 @@
                     <li><a href="#" target="_self">About</a></li>
                     <li><a href="#" target="_self">Contact</a></li>
                 </ul>
-            </div>
+            </nav>
             <div class="profile">
-                <img src="img/icon-cart.svg" alt="cart" class="cart">
+                <button class="btCart">
+                    <span class="indicador"></span>
+                    <img src="img/icon-cart.svg" alt="cart" class="cart">
+                </button>
                 <img src="img/image-avatar.png" alt="avatar" class="avatar">
             </div>
         </header>
         <hr>
         <main>
-            <div class="content-img">
+            <section class="content-img">
                 <img src="img/image-product-1.jpg" alt="imagem de tênis" class="img-main">
                 <div class="div-thumbnail">
                     <img src="img/image-product-1-thumbnail.jpg" alt="imagem de tênis" class="thumbnail" id="img1">
@@ -39,10 +42,9 @@
                     <img src="img/image-product-3-thumbnail.jpg" alt="imagem de tênis" class="thumbnail" id="img3">
                     <img src="img/image-product-4-thumbnail.jpg" alt="imagem de tênis" class="thumbnail" id="img4">
                 </div>
-            </div>
-            <div class="content-text">
-                <span class="
-                company">SNEAKER COMPANY</span>
+            </section>
+            <section class="content-text">
+                <span class="company">SNEAKER COMPANY</span>
                 <h1>Fall Limited Edition Sneakers</h1>
                 <p class="p-main">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
                 <div>
@@ -50,18 +52,32 @@
                     <p class="ex-preco">$250.00</p>
                 </div>
                 <div class="div-button">
-                    <div class="btNumP">
+                    <button class="btNumP">
                         <img src="img/icon-minus.svg" alt="símbolo de menos" class="menos">
                         <span class="outNum">0</span>
                         <img src="img/icon-plus.svg" alt="símbolo de mais" class="mais">
-                    </div>
-                    <div class="btC">
+                    </button>
+                    <button class="btC">
                         <img src="img/icon-cart.svg" alt="símbolo de cart">
                         <span>Add to cart</span>
-                    </div>
+                    </button>
                 </div>
-            </div>
+            </section>
         </main>
+    </div>
+    <div class="lightbox">
+        <section class="content-img">
+                <div class="div-close">
+                    <button class="btClose"><img src="img/icon-close.svg" alt="close"></button>
+                </div>
+                <img src="img/image-product-1.jpg" alt="imagem de tênis" class="img-main" id="imgL">
+            <div class="div-thumbnail">
+                <img src="img/image-product-1-thumbnail.jpg" alt="imagem de tênis" class="thumbnail" id="img01">
+                <img src="img/image-product-2-thumbnail.jpg" alt="imagem de tênis" class="thumbnail" id="img02">
+                <img src="img/image-product-3-thumbnail.jpg" alt="imagem de tênis" class="thumbnail" id="img03">
+                <img src="img/image-product-4-thumbnail.jpg" alt="imagem de tênis" class="thumbnail" id="img04">
+            </div>
+        </section>
     </div>
 </body>
 </html>

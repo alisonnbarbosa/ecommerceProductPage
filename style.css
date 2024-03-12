@@ -17,11 +17,12 @@
     padding: 0;
     font-family: Kumbh Sans,sans-serif;
 }
+
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 0.5rem;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0 0.5rem;
 }
 .container{
     max-width: 1440px;
@@ -41,8 +42,23 @@ header{
     list-style: none;
 }
 .navlist a{
+    position: relative;
     text-decoration: none;
+    color: var(--Darkgrayishblue);
+    cursor: pointer;
+}
+.navlist a:hover{
     color: var(--Black);
+}
+.navlist a:hover::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40px;
+    border-radius: 10px;
+    background-color: var(--Orange);
+    width: 100%;
+    height: 5px;
 }
 .profile{
     display: flex;
@@ -52,8 +68,28 @@ header{
 .cart{
     width: 25px;
 }
+.btCart{
+    padding: 5px 0;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.indicador{
+    position: absolute;
+    right: 0;
+    top: 2;
+    background-color: var(--Orange);
+    color: var(--White);
+    font-weight: 600;
+    border-radius: 12px;
+    width: 20px;
+    font-size: 10px;
+}
 .avatar{
     width: 35px;
+    cursor: pointer;
+    position: relative;
 }
 main{
     display: flex;   
@@ -67,6 +103,7 @@ main{
 .img-main{
     max-width: 500px;
     border-radius: 10px;
+    cursor: pointer;
 }
 .div-thumbnail{
     display: flex;
@@ -75,6 +112,7 @@ main{
 .thumbnail{
     max-width: 100px;
     border-radius: 10px;
+    cursor: pointer;
 }
 .content-text{
     display: flex;
@@ -125,6 +163,8 @@ main{
     font-size: 1.2rem;
     background-color: var(--Lightgrayishblue);
     border-radius: 10px;
+    border: none;
+    cursor: pointer;
 }
 .btC{
     display: flex;
@@ -137,4 +177,35 @@ main{
     background-color: var(--Orange);
     color: var(--White);
     border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.btC img{
+    filter: brightness(100);
+}
+.lightbox{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.div-close{
+    position: relative;
+}
+.btClose{
+    position: absolute;
+    right: 0;
+    top: -10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.btClose img{
+    width: 20px;
+    filter: brightness(110);
 }
