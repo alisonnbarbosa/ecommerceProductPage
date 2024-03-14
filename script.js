@@ -92,19 +92,17 @@ const btCart = document.querySelector('.btCart')
 const profile = document.querySelector('.profile')
 
 let click = 0
+let div = document.createElement('div')
+div.className = 'container-cart'
 
 function criarDivCart(){
     click++
     var num = outNum.textContent
-    let div = document.createElement('div')
-    div.className = 'container-cart'
 
-    criarTextoCart(div)
-
-    if(click > 1){
-        return
-    }
     if(num == 0){
+        if(click > 1){
+            return
+        }
         div.innerHTML = `<h1>Cart</h1>
         <hr>
         <div class="content-cart">
@@ -124,17 +122,11 @@ function criarDivCart(){
         <button class="bt-cart">Checkout</button>`
     }
     profile.appendChild(div)
+
+    num = 0
 }
 btC.addEventListener('click', criarDivCart)
 
-function criarTextoCart(div){
+btCart.addEventListener('click', ()=> div.classList.toggle('visible'))
 
-}
-/*
-btC criar a div cart e deixar a div em display none
-btC criar o indicador
-
-quando clicar em cart a div cart receber display flex
-
-criar a div cart - apenas uma vez e apenas atualizar os dados depois
-*/
+criarDivCart()
