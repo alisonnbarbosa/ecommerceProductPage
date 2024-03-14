@@ -77,18 +77,19 @@ header{
     position: relative;
     background-color: transparent;
     border: none;
-    cursor: pointer;
 }
 .indicador{
+    z-index: 1;
     position: absolute;
-    right: 0;
-    top: 2;
+    right: -5px;
+    top: 0;
     background-color: var(--Orange);
     color: var(--White);
     font-weight: 600;
     border-radius: 12px;
     width: 20px;
     font-size: 10px;
+    padding: 2px;
 }
 .avatar{
     width: 35px;
@@ -163,8 +164,6 @@ main{
 .thumbnail:hover{
     opacity: 75%;
     transition: 0.2s;
-    outline: 5px solid var(--Orange);
-    border-radius: 10px;
 }
 .select{
     max-width: 100px;
@@ -250,6 +249,7 @@ main{
     transition: 0.2s;
 }
 .lightbox{
+    z-index: 1;
     position: absolute;
     top: 0;
     bottom: 0;

@@ -2,7 +2,7 @@ const imgM = document.querySelector('.img-main')//img principal do site
 const lightbox = document.querySelector('.lightbox')
 const btClose = document.querySelector('.btClose')
 
-imgM.addEventListener('click', ()=> {if(window.innerWidth > 999){lightbox.style.display = 'flex'}})
+imgM.addEventListener('click', ()=> {if(window.innerWidth > 899){lightbox.style.display = 'flex'}})
 btClose.addEventListener('click', ()=> lightbox.style.display = 'none')
 
 const imgL = document.getElementById('imgL')//img do lightbox
@@ -35,7 +35,7 @@ imgsL[3].addEventListener('click', ()=> trocarImg(4))
 const btPreviousL = document.querySelector('.btPreviousL')
 const btNextL = document.querySelector('.btNextL')
 
-let numL = 1
+let numL = 0
 
 function navImgButtons(num){
     numL = numL + num
@@ -69,12 +69,10 @@ function removeImgSel(img, imgL){
 }
 
 /*indicar quantidade de produtos*/
-
 document.querySelector('.btMenos').addEventListener('click', ()=> quantidadeProduto(-1))
 document.querySelector('.btMais').addEventListener('click', ()=> quantidadeProduto(1))
 
 let outNum = document.querySelector('.outNum')
-
 let num = 0
 
 function quantidadeProduto(n){
@@ -86,10 +84,12 @@ function quantidadeProduto(n){
     }
     outNum.textContent = num
 }
+
 /*cria a div cart*/
 const btC = document.querySelector('.btC')
 const btCart = document.querySelector('.btCart')
 const profile = document.querySelector('.profile')
+const indicador = document.querySelector('.indicador')
 
 let click = 0
 let div = document.createElement('div')
@@ -97,7 +97,6 @@ div.className = 'container-cart'
 
 function criarDivCart(){
     click++
-    var num = outNum.textContent
 
     if(num == 0){
         if(click > 1){
@@ -123,10 +122,33 @@ function criarDivCart(){
     }
     profile.appendChild(div)
 
-    num = 0
+    indicarNum(num)
+    quantidadeProduto(num = 0)
+
+    document.querySelector('.btDelete').addEventListener('click', deleteCart)
 }
 btC.addEventListener('click', criarDivCart)
 
 btCart.addEventListener('click', ()=> div.classList.toggle('visible'))
 
 criarDivCart()
+
+function indicarNum(n){
+    if(n > 0){    
+        indicador.textContent = num
+        indicador.style.display = 'block'
+    } else {
+        indicador.style.display = 'none'
+    }
+}
+
+function deleteCart(){
+    div.innerHTML = `<h1>Cart</h1>
+        <hr>
+        <div class="content-cart">
+            <p class='p'>Your cart is empty.</p>
+        </div>`;
+    profile.appendChild(div)
+
+    indicarNum(0)
+}
