@@ -285,6 +285,7 @@ main{
     display: flex;
     flex-direction: column;
     width:250px;
+    height: 135px;
     gap: 0.5rem;
     background-color: var(--White);
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
@@ -295,6 +296,8 @@ main{
 }
 .content-cart{
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 0.5rem;
 }
 .content-cart p{
