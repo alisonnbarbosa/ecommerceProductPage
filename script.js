@@ -87,4 +87,30 @@ function quantidadeProduto(n){
     outNum.textContent = num
 }
 /*cria a div cart*/
+const btCart = document.querySelector('.btCart')
 const profile = document.querySelector('.profile')
+
+let click = 0
+
+function criarDivCart(){
+    click++
+
+    if(click > 1){
+        return
+    }
+    let div = document.createElement('div')
+    div.className = 'container-cart'
+    div.innerHTML = `<h1>Cart</h1>
+    <hr>
+    <div class="content-cart">
+        <img src="img/image-product-1-thumbnail.jpg" alt="imagem de tênis" class="img-cart">
+        <div>
+            <p class="p-cart">Fall Limited Edition Sneakers</p>
+            <p>$125.00 x <span>${num}</span> <span class="outTotal">$${num*125}</span></p>
+        </div>
+        <button class="btDelete"><img src="img/icon-delete.svg" alt="delete"></button>
+    </div>
+    <button class="bt-cart">Checkout</button>`
+    profile.appendChild(div)
+}
+btCart.addEventListener('click', criarDivCart)
