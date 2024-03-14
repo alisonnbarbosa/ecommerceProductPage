@@ -86,3 +86,5 @@ function quantidadeProduto(n){
     }
     outNum.textContent = num
 }
+/*cria a div cart*/
+const profile = document.querySelector('.profile')

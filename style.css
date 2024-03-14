@@ -61,6 +61,7 @@ header{
     height: 5px;
 }
 .profile{
+    position: relative;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -275,5 +276,54 @@ main{
     filter: brightness(110);
 }
 .btClose:hover img{
-    filter: sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(1)
+    filter: sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(1);
+}
+.container-cart{
+    position: absolute;
+    right: 0;
+    top: 35px;
+    display: flex;
+    flex-direction: column;
+    width:250px;
+    gap: 0.5rem;
+    background-color: var(--White);
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+}
+.container-cart h1{
+    font-size: 1rem;
+}
+.content-cart{
+    display: flex;
+    gap: 0.5rem;
+}
+.content-cart p{
+    color: var(--Darkgrayishblue);
+}
+.img-cart{
+    width: 60px;
+}
+.btDelete{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.bt-cart{
+    border: none;
+    background-color: var(--Orange);
+    padding: ;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.bt-cart:hover{
+    opacity: 70%;
+    transition: 0.2s;
+}
+.outTotal{
+    font-weight: 600;
+    color: var(--Black);
 }
