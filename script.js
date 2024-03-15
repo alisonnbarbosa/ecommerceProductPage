@@ -125,7 +125,7 @@ function criarDivCart(){
     indicarNum(num)
     quantidadeProduto(num = 0)
 
-    document.querySelector('.btDelete').addEventListener('click', deleteCart)
+    document.querySelector('.btDelete').addEventListener('click', ()=> deleteCart())
 }
 btC.addEventListener('click', criarDivCart)
 
@@ -155,3 +155,6 @@ function deleteCart(){
 
 /*menu responsivo*/
 const menu = document.querySelector('.menu')
+const navbar = document.querySelector('.navbar')
+
+menu.addEventListener('click', ()=> {alert('oi')})

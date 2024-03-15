@@ -37,6 +37,9 @@ header{
 .menu{
     display: none;
 }
+.close-menu{
+    display: none;
+}
 .navlist{
     display: flex;
     gap: 2rem;
@@ -48,18 +51,21 @@ header{
     color: var(--Darkgrayishblue);
     cursor: pointer;
 }
-.navlist a:hover{
-    color: var(--Black);
-}
-.navlist a:hover::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 40px;
-    border-radius: 10px;
-    background-color: var(--Orange);
-    width: 100%;
-    height: 5px;
+
+@media (min-width: 900px) {
+    .navlist a:hover{
+        color: var(--Black);
+    }
+    .navlist a:hover::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 40px;
+        border-radius: 10px;
+        background-color: var(--Orange);
+        width: 100%;
+        height: 5px;
+    }  
 }
 .profile{
     position: relative;
@@ -362,11 +368,9 @@ main{
         width: 100%;
         border-radius: 0;
     }
-    .navlist{
-        display: none;
-    }
     .menu{
         display: block;
+        cursor: pointer;
     }
     .div-menu{
         display: flex;
@@ -396,5 +400,27 @@ main{
     }
     .btC, .btNumP{
         width: 90%;
+    }
+    .navbar{
+        position: absolute;
+        top: 0;
+        background-color: var(--White);
+        width: 50vw;
+        height: 100vh;
+        display: none;
+        padding-top: 1rem;
+        z-index: 1;
+    }
+    .navlist{
+        flex-direction: column;
+    }
+    .navlist a{
+        font-weight: 600;
+        color: var(--Black);
+    } 
+    .close-menu{
+        display: block;
+        width: 15px;
+        cursor: pointer;
     }
 }
