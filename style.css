@@ -410,6 +410,7 @@ main{
         display: none;
         padding-top: 1rem;
         z-index: 1;
+        animation: menu 0.4s;
     }
     .navlist{
         flex-direction: column;
@@ -422,5 +423,14 @@ main{
         display: block;
         width: 15px;
         cursor: pointer;
+    }
+}
+
+@keyframes menu {
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
     }
 }

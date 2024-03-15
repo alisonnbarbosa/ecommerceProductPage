@@ -119,13 +119,14 @@ function criarDivCart(){
             <button class="btDelete"><img src="img/icon-delete.svg" alt="delete"></button>
         </div>
         <button class="bt-cart">Checkout</button>`
+
+        var btDelete = document.querySelector('.btDelete') 
+        btDelete.addEventListener('click', ()=> deleteCart())
     }
     profile.appendChild(div)
 
     indicarNum(num)
     quantidadeProduto(num = 0)
-
-    document.querySelector('.btDelete').addEventListener('click', ()=> deleteCart())
 }
 btC.addEventListener('click', criarDivCart)
 
@@ -155,6 +156,10 @@ function deleteCart(){
 
 /*menu responsivo*/
 const menu = document.querySelector('.menu')
+const closeMenu = document.querySelector('.close-menu')
 const navbar = document.querySelector('.navbar')
 
-menu.addEventListener('click', ()=> {alert('oi')})
+menu.addEventListener('click', ()=> navbar.style.display = 'flex')
+closeMenu.addEventListener('click', ()=> {
+    navbar.style.display = 'none'
+})
