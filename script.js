@@ -152,3 +152,6 @@ function deleteCart(){
 
     indicarNum(0)
 }
+
+/*menu responsivo*/
+const menu = document.querySelector('.menu')

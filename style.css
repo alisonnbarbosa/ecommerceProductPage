@@ -19,10 +19,11 @@
 }
 
 body{
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 0 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
 }
 .container{
     max-width: 1440px;
@@ -31,7 +32,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 1rem 1rem;
 }
 .menu{
     display: none;
@@ -167,7 +168,6 @@ main{
 }
 .select{
     max-width: 100px;
-    opacity: 50%;
     outline: 5px solid var(--Orange);
     border-radius: 10px;
 }
@@ -275,9 +275,6 @@ main{
     width: 20px;
     filter: brightness(110);
 }
-.btClose:hover img{
-    filter: sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(1);
-}
 .container-cart{
     position: absolute;
     right: 0;
@@ -332,4 +329,72 @@ main{
 .outTotal{
     font-weight: 600;
     color: var(--Black);
+}
+@media (max-width:899px) {
+    body{
+        margin: 0;
+    }
+    .container{
+        max-width: 350px;
+    }
+    header{
+        z-index: 1;
+        padding: 1.5rem 0;
+        background-color: var(--White);
+        position: sticky;
+        top: 0;
+    }
+    main{
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+    }
+    .thumbnail, .select {
+        display: none;
+    }
+    .btPrevious,.btNext{
+        display: block;
+    }
+    .content-img{
+        gap: 0;
+    }
+    .img-main{
+        width: 100%;
+        border-radius: 0;
+    }
+    .navlist{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+    .div-menu{
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    .content-text{
+        padding: 1.5rem 1rem;
+    }
+    .hr{
+        display: none;
+    }
+    .container-cart{
+        z-index: 1;
+        right: -20%;
+        top: 80px;
+        width: 350px;
+        height: 150px;
+        gap: 0.5rem;
+        background-color: var(--White);
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+        padding: 1rem;
+    }
+    .div-button{
+        flex-direction: column;
+        align-items: center;
+    }
+    .btC, .btNumP{
+        width: 90%;
+    }
 }
