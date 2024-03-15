@@ -34,6 +34,8 @@ imgsL[3].addEventListener('click', ()=> trocarImg(4))
 /*nav das imgs através dos buttons*/
 const btPreviousL = document.querySelector('.btPreviousL')
 const btNextL = document.querySelector('.btNextL')
+const btPrevious = document.querySelector('.btPrevious')
+const btNext = document.querySelector('.btNext')
 
 let numL = 0
 
@@ -50,7 +52,8 @@ function navImgButtons(num){
 
 btPreviousL.addEventListener('click', ()=> navImgButtons(-1))
 btNextL.addEventListener('click', ()=> navImgButtons(1))
-const white = document.querySelector('.white')
+btPrevious.addEventListener('click', ()=> navImgButtons(-1))
+btNext.addEventListener('click', ()=> navImgButtons(1))
 
 /*indicar qual img o usuário está visualizando*/
 function indicarImg(num){
@@ -64,7 +67,7 @@ function imgSel(img, imgL){
     imgL.classList = 'select'
 }
 function removeImgSel(img, imgL){
-    img.classList = 'thumbnail'
+    img.className = 'thumbnail'
     imgL.className = 'thumbnail'
 }
 
@@ -159,7 +162,5 @@ const menu = document.querySelector('.menu')
 const closeMenu = document.querySelector('.close-menu')
 const navbar = document.querySelector('.navbar')
 
-menu.addEventListener('click', ()=> navbar.style.display = 'flex')
-closeMenu.addEventListener('click', ()=> {
-    navbar.style.display = 'none'
-})
+menu.addEventListener('click', ()=> navbar.style.transform = 'translateX(0)')
+closeMenu.addEventListener('click', ()=> navbar.style.transform= 'translateX(-100%)')

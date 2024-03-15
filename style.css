@@ -336,6 +336,7 @@ main{
     font-weight: 600;
     color: var(--Black);
 }
+
 @media (max-width:899px) {
     body{
         margin: 0;
@@ -407,10 +408,11 @@ main{
         background-color: var(--White);
         width: 50vw;
         height: 100vh;
-        display: none;
+        display: flex;
         padding-top: 1rem;
         z-index: 1;
-        animation: menu 0.4s;
+        transform: translateX(-100%);
+        transition: 0.4s;
     }
     .navlist{
         flex-direction: column;
@@ -423,14 +425,5 @@ main{
         display: block;
         width: 15px;
         cursor: pointer;
-    }
-}
-
-@keyframes menu {
-    from{
-        transform: translateX(-100%);
-    }
-    to{
-        transform: translateX(0);
     }
 }
