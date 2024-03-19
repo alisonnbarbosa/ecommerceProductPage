@@ -37,7 +37,7 @@ const btNextL = document.querySelector('.btNextL')
 const btPrevious = document.querySelector('.btPrevious')
 const btNext = document.querySelector('.btNext')
 
-let numL = 0
+let numL = 1
 
 function navImgButtons(num){
     numL = numL + num
